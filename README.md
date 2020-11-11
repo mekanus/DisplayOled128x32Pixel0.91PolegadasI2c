@@ -3,7 +3,7 @@ Códigos para uso do display Display Oled Azul 128x32 Pixel 0.91 Polegadas I2c =
 
 Os codigos aqui contidos nao possuem finalidade comercial. 
 
-// 11/11/2020 
+# 11/11/2020 
     Repositorio criado;
     Codigo para testar o display com Arduino. Add funcao para forcar o reset do display nos casos de falta/retomada de enrgia.
 

@@ -2,7 +2,7 @@
  * MEKANUS ROBÓTICA EDUCACIONAL
  * DISPLAY OLED 0,91 INCH 128X32 I2C
  * Pinagem: SDA (A4), SCK (A5), VCC (5V) e GND(GND)
- * Dezipe a pasta "U8g2" em libraries
+ * Deszipar a pasta "U8g2" em libraries
  * 
 */
 

@@ -1,0 +1,46 @@
+/*
+ * MEKANUS ROBÓTICA EDUCACIONAL
+ * DISPLAY OLED 0,91 INCH 128X32 I2C
+ * Pinagem: SDA (A4), SCK (A5), VCC (5V) e GND(GND)
+ * Dezipe a pasta "U8g2" em libraries
+ * 
+*/
+
+#include <Arduino.h>    //Biblioteca padrão Arduino
+#include <U8g2lib.h>    //Biblioteca para escrita de caracteres
+#include <SPI.h>        //Biblioteca para o protocolo de comunicacao SPI
+#include <Wire.h>       //Biblioteca para wire.h
+#include <avr/wdt.h>    //Biblioteca para funcoes AVR e watchdog timer
+
+U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C u8g2(U8G2_R0);   //Orientacao ao objeto SSD1306 controlador do display 0.91"
+
+ void setup(void) {
+   u8g2.begin();        //Inicia funcoes de escrita
+   MCUSR = 0;           //Limpa qualquer flag ou prioridades de reset
+
+}
+
+  void loop(void) {
+   
+   u8g2.clearBuffer();			            		// Limpa a memória interna
+   u8g2.setFont(u8g2_font_logisoso28_tr);   // Escolhe o tipo de fonte. Veja mais em https://github.com/olikraus/u8g2/wiki/fntlistall
+   u8g2.drawStr(0,29,"MEKANUS");	          // Define as coordenadas da escrita e o que será escrito
+   u8g2.sendBuffer();					              // Envia para o display as informacoes
+   delay(1000);                             //Tempo de exibicao
+
+   u8g2.clearBuffer();                      // Limpa a memória interna
+   u8g2.setFont(u8g2_font_logisoso24_tr);   // Escolhe o tipo de fonte. Veja mais em https://github.com/olikraus/u8g2/wiki/fntlistall
+   u8g2.drawStr(10,24,"Robotica");	        // Define as coordenadas da escrita e o que será escrito
+   u8g2.sendBuffer();					              // Envia para o display as informacoes
+   delay(1000);                             //Tempo de exibicao
+
+   u8g2.clearBuffer();                      // Limpa a memória interna
+   u8g2.setFont(u8g2_font_logisoso18_tr);   // Escolhe o tipo de fonte. Veja mais em https://github.com/olikraus/u8g2/wiki/fntlistall
+   u8g2.drawStr(0,29,"Educacional");	      // Define as coordenadas da escrita e o que será escrito
+   u8g2.sendBuffer();					              // Envia para o display as informacoes
+   delay(1000);                             //Tempo de exibicao
+
+   wdt_enable(WDTO_15MS);                   //Funcao da biblioteca AVR/WDT.h para enviar sinal de controle ao Watchdog timer. Atua como reset
+                                            //para o barramento I2C. Ativado automaticamente com intuito de corrigir falha de comunicacao
+   //wdt_reset();                           //Funcao de reset do watchdog timer pode ser chamado em resposta a uma acao. Sem aguardos
+}

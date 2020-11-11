@@ -5,6 +5,11 @@ Os codigos aqui contidos nao possuem finalidade comercial.
 
 # 11/11/2020 
     Repositorio criado;
-    Codigo para testar o display com Arduino. Add funcao para forcar o reset do display nos casos de falta/retomada de enrgia.
+    
+    Sketch para testar o display;
+    
+    Desenho do cirtuico para testar o display;
+    
+    Codigo para testar o display com Arduino. Add funcao para forcar o reset do display nos casos de falta/retomada de enrgia;
 
 
